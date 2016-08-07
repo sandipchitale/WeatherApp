@@ -2,9 +2,17 @@
   "name": "weather-app",
   "version": "0.0.0",
   "license": "MIT",
+  "keywords": [
+    "Electron",
+    "Angular 2",
+    "Material 2",
+    "Weather App"
+    ],
+  "author": "Sandip Chitale",
   "angular-cli": {},
   "scripts": {
-    "start": "ng serve",
+    "start": "node_modules\\electron-prebuilt\\dist\\electron electron-main.js",
+    "build": "ng build",
     "postinstall": "typings install",
     "lint": "tslint \"src/**/*.ts\"",
     "test": "ng test",

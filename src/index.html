@@ -3,17 +3,19 @@
 <head>
   <meta charset="utf-8">
   <title>WeatherApp</title>
-  <base href="/">
-
+  <base>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="images/weatherapp128x128.ico">
+</head>
+<body>
+  <script>
+    var base = document.querySelector('base');
+    base.href = 'file:///' + __dirname.replace(/\\/g, '/') + '/';
+  </script>
   {{#unless environment.production}}
   <script src="/ember-cli-live-reload.js" type="text/javascript"></script>
   {{/unless}}
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="icon" type="image/x-icon" href="favicon.ico">
-</head>
-<body>
   <app-root>Loading...</app-root>
-  
     {{#each scripts.polyfills}}
     <script src="{{.}}"></script>
     {{/each}}
@@ -22,6 +24,5 @@
         System.import('main');
       }).catch(console.error.bind(console));
     </script>
-  
 </body>
 </html>
