@@ -1,6 +1,7 @@
 import { bootstrap } from '@angular/platform-browser-dynamic';
-import {PLATFORM_DIRECTIVES,provide,Input,Directive,HostBinding} from '@angular/core';
+import { PLATFORM_DIRECTIVES,provide,Input,Directive,HostBinding } from '@angular/core';
 import { enableProdMode } from '@angular/core';
+import { HTTP_PROVIDERS } from '@angular/http';
 import { AppComponent, environment } from './app/';
 
 if (environment.production) {
@@ -35,5 +36,6 @@ export class FlexDirective{
 
 bootstrap(AppComponent,[
     provide(PLATFORM_DIRECTIVES, { useValue: FlexDirective, multi: true}),
-    provide(PLATFORM_DIRECTIVES, { useValue: LayoutDirective, multi: true})
+    provide(PLATFORM_DIRECTIVES, { useValue: LayoutDirective, multi: true}),
+    HTTP_PROVIDERS
 ]);
