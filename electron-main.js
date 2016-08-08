@@ -15,12 +15,10 @@ function createWindow () {
 
   // Create the browser window.
   mainWindow = new BrowserWindow({
-    width: 500,
-    height: 700,
-    frame: true,
-    alwaysOnTop: false,
+    width: 600,
+    height: 800,
+    frame: false,
     center: true,
-    resizable: false,
     icon: __dirname + '/dist/images/weatherapp128x128.png'
   });
 

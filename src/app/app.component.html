@@ -1,5 +1,17 @@
 <h1>
   <md-toolbar color="primary">
     {{title}}
-  </md-toolbar>  
+  </md-toolbar>
+  <md-card class="md-padding" *ngFor="let place of places">
+    <md-card-title>{{place.city}}</md-card-title>
+    <md-card-subtitle>{{place.stateAndCountry}}</md-card-subtitle>
+    <div layout="row" flex>
+      <div layout="row" flex>
+        <md-card class="md-padding" *ngFor="let weekDay of weekDays" flex>
+          <md-card-subtitle>{{weekDay}}</md-card-subtitle>
+          <md-card-content>{{randomTemperature()}} &#x2109;</md-card-content>
+        </md-card>
+      </div>
+    </div>
+  </md-card>
 </h1>
