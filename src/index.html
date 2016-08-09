@@ -13,6 +13,7 @@
     var base = document.querySelector('base');
     if (window && window.process && window.process.type) {
       base.href = 'file:///' + __dirname.replace(/\\/g, '/') + '/';
+      window.remote = require('remote');
     } else  {
       base.href = '/';
     }

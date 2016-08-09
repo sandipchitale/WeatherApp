@@ -23,6 +23,7 @@ const materialPkgs:string[] = [
   'card',
   'toolbar',
   'sidenav',
+  'list',
   'icon'
 ];
 

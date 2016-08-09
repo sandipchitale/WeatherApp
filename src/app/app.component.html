@@ -1,17 +1,41 @@
-<h1>
-  <md-toolbar color="primary">
-    <md-icon>cloud</md-icon>&nbsp;&nbsp;{{title}}
-  </md-toolbar>
-  <md-card class="md-padding" *ngFor="let place of places">
-    <md-card-title>{{place.city}}</md-card-title>
-    <md-card-subtitle>{{place.stateAndCountry}}</md-card-subtitle>
-    <div layout="row" flex>
-      <div layout="row" flex>
-        <md-card class="md-padding" *ngFor="let weekDay of weekDays" flex>
-          <md-card-subtitle>{{weekDay}}</md-card-subtitle>
-          <md-card-content>{{randomTemperature()}} &#x2109;</md-card-content>
-        </md-card>
+<md-sidenav-layout fullscreen>
+    <md-sidenav mode="push" #sidenav>
+    <md-nav-list>
+      <div md-list-item>
+        <a md-list-item>
+         <md-icon md-list-icon>room</md-icon>
+         <span md-line>Add a location</span>
+       </a>
+       <a md-list-item>
+        <md-icon md-list-icon>home</md-icon>
+        <span md-line>About Weather App</span>
+      </a>
       </div>
-    </div>
-  </md-card>
-</h1>
+    </md-nav-list>
+  </md-sidenav>
+  <md-toolbar color="primary">
+    <button md-icon-button (click)="sidenav.open()">
+      <md-icon>menu</md-icon>
+    </button>
+    &nbsp;
+    {{title}}
+    <span flex></span>
+    <button md-icon-button *ngIf="electronic" (click)="exit()">
+      <md-icon >clear</md-icon>
+    </button>
+  </md-toolbar>
+  <div class="card-container">
+    <md-card class="md-padding" flex="1" *ngFor="let place of places">
+      <md-card-title>{{place.city}}</md-card-title>
+      <md-card-subtitle>{{place.stateAndCountry}}</md-card-subtitle>
+      <div layout="row" flex>
+        <div layout="row" flex>
+          <md-card class="md-padding" *ngFor="let weekDay of weekDays" flex>
+            <md-card-subtitle>{{weekDay}}</md-card-subtitle>
+            <md-card-content>{{place.forecast[weekDay]}}&#x2109;</md-card-content>
+          </md-card>
+        </div>
+      </div>
+    </md-card>
+  </div>
+</md-sidenav-layout>

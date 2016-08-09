@@ -1,3 +1,21 @@
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+md-sidenav-layout {
+  background: rgba(0,0,0,0.03);
+}
+
+md-sidenav {
+  width: 300px;
+}
+
 md-toolbar.md-primary {
   background-color: #2196F3;
+}
+
+.card-container {
+  display: flex;
+  flex-flow: row wrap;
 }
